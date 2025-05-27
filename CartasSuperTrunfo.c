@@ -3,7 +3,6 @@
 int main (){
 
     //Variáveis da Primeira carta 
-
     char estado1;  
     char codigo1[4];  
     char cidade1[50];  
@@ -15,9 +14,7 @@ int main (){
     float PibPerCapita1;
     float SuperPoder1;
 
-
     // Variáveis da Segunda carta 
-
     char estado2;  
     char codigo2[4];  
     char cidade2[50];  
@@ -29,9 +26,7 @@ int main (){
     float PibPerCapita2;
     float SuperPoder2;
 
-
     // Entrada de dados para a Primeira carta
-
     printf("Digite a letra do estado da primeira carta (A-H):");
     scanf(" %c", &estado1);
 
@@ -47,9 +42,7 @@ int main (){
     printf("Digite a área da cidade (em km²): ");
     scanf("%lf", &area1);
 
-    // Limpar o buffer
     getchar();  // Limpa o \n após a leitura de um número
-
 
     printf("Digite o PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pib1);
@@ -66,10 +59,9 @@ int main (){
     SuperPoder1 = populacao1 + area1 + pib1 + pontos1 + densidadepopulacional1 + PibPerCapita1;
     printf(" Super Poder = %f\n", SuperPoder1);
 
-        
     
-        // Entrada de dados para a Segunda carta
-
+    
+    // Entrada de dados para a Segunda carta
     printf("Digite a letra do estado da segunda carta (A-H):");
     scanf(" %c", &estado2);
 
@@ -85,9 +77,7 @@ int main (){
     printf("Digite a área da cidade (em km²): ");
     scanf("%f", &area2);
 
-    // Limpar o buffer
     getchar();  // Limpa o \n após a leitura de um número
-
 
     printf("Digite o PIB da cidade (em bilhões de reais): ");
     scanf("%f", &pib2);
@@ -106,7 +96,6 @@ int main (){
 
     
     
-    
     // Exibindo os dados das cartas
     printf("\n=== Carta 1 ===\n");
     printf("Estado: %c\n", estado1);
@@ -119,7 +108,6 @@ int main (){
     printf("Densidade populacional: %f\n", densidadepopulacional1);
     printf("O pib per capta é: %f\n", PibPerCapita1);
 
-
     printf("\n=== Carta 2 ===\n");
     printf("Estado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
@@ -131,46 +119,45 @@ int main (){
     printf("Densidade populacional: %f\n", densidadepopulacional2);
     printf("O pib per capta é: %f\n", PibPerCapita2);
 
-
-    printf("\n=== COMPARAÇÃO DAS CARTAS ===\n");
     
-    printf("Populacao: Carta %d venceu (%d)\n", 
-       (populacao1 > populacao2) ? 1 : 2,  // mostra qual carta venceu
-       (populacao1 > populacao2) ? 1 : 0   // mostra 1 se Carta 1 venceu, ou 0 se não venceu
-);
+    
+    
+    printf("\n=== COMPARAÇÃO DAS CARTAS ===\n");
 
-    printf("Area: Carta %d venceu (%d)\n", 
-    (area1 > area2) ? 1 : 2, // mostra qual carta venceu
-    (area1 > area2) ? 1 : 0); // mostra 1 se Carta 1 venceu, ou 0 se não venceu
+    if (populacao1 > populacao2)
+        printf("Populacao: Carta 1 venceu (1)\n");
+    else
+        printf("Populacao: Carta 2 venceu (0)\n");
 
-    printf("PIB: Carta %d venceu (%d)\n", 
-        (pib1 > pib2) ? 1 : 2, // mostra qual carta venceu
-        (pib1 > pib2) ? 1 : 0);// mostra 1 se Carta 1 venceu, ou 0 se não venceu
+    if (area1 > area2)
+        printf("Area: Carta 1 venceu (1)\n");
+    else
+        printf("Area: Carta 2 venceu (0)\n");
 
-    printf("Pontos Turisticos: Carta %d venceu (%d)\n", 
-        (pontos1 > pontos2) ? 1 : 2, // mostra qual carta venceu
-        (pontos1 > pontos2) ? 1 : 0);// mostra 1 se Carta 1 venceu, ou 0 se não venceu
+    if (pib1 > pib2)
+        printf("PIB: Carta 1 venceu (1)\n");
+    else
+        printf("PIB: Carta 2 venceu (0)\n");
 
-    printf("Densidade Populacional: Carta %d venceu (%d)\n",
-         (densidadepopulacional1 < densidadepopulacional2) ? 1 : 2, // mostra qual carta venceu
-         (densidadepopulacional1 < densidadepopulacional2) ? 1 : 0);// mostra 1 se Carta 1 venceu, ou 0 se não venceu
+    if (pontos1 > pontos2)
+        printf("Pontos Turisticos: Carta 1 venceu (1)\n");
+    else
+        printf("Pontos Turisticos: Carta 2 venceu (0)\n");
 
-    printf("PIB per Capita: Carta %d venceu (%d)\n", 
-        (PibPerCapita1 > PibPerCapita2) ? 1 : 2, // mostra qual carta venceu
-        (PibPerCapita1 > PibPerCapita2) ? 1 : 0);// mostra 1 se Carta 1 venceu, ou 0 se não venceu
+    if (densidadepopulacional1 < densidadepopulacional2)
+        printf("Densidade Populacional: Carta 1 venceu (1)\n");
+    else
+        printf("Densidade Populacional: Carta 2 venceu (0)\n");
 
-        printf("Super Poder: Carta %d venceu (%d)\n", 
-            (SuperPoder1 > SuperPoder2) ? 1 : 2, 
-            (SuperPoder1 > SuperPoder2) ? 1 : 0);
+    if (PibPerCapita1 > PibPerCapita2)
+        printf("PIB per Capita: Carta 1 venceu (1)\n");
+    else
+        printf("PIB per Capita: Carta 2 venceu (0)\n");
 
-
-
-
-
-
-
+    if (SuperPoder1 > SuperPoder2)
+        printf("Super Poder: Carta 1 venceu (1)\n");
+    else
+        printf("Super Poder: Carta 2 venceu (0)\n");
 
     return 0;
-
-
 }
