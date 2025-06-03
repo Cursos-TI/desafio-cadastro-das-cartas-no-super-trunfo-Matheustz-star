@@ -126,7 +126,8 @@ int main (){
     printf("5 - Densidade Populacional\n");
     printf("6 - PIB per Capita\n");
     printf("7 - Super Poder\n");
-    printf("Digite a opção (1 a 7): ");
+    printf("8 - Comparar dois atributos ao mesmo tempo\n");
+    printf("Digite a opção (1 a 8): ");
     scanf("%d", &opcao);
 
     printf("\n=== RESULTADO DA COMPARAÇÃO ===\n");
@@ -199,7 +200,7 @@ int main (){
             if (PibPerCapita1 > PibPerCapita2)
                 printf("Vencedor: %s\n", cidade1);
             else if (PibPerCapita2 > PibPerCapita1)
-                                printf("Vencedor: %s\n", cidade2);
+                printf("Vencedor: %s\n", cidade2);
             else
                 printf("Empate!\n");
             break;
@@ -216,10 +217,65 @@ int main (){
                 printf("Empate!\n");
             break;
 
+        case 8:
+            printf("Comparação por dois atributos (soma dos dois valores)\n");
+            printf("Atributos disponíveis:\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");
+            printf("4 - Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("6 - PIB per Capita\n");
+            printf("7 - Super Poder\n");
+
+            int atributo1, atributo2;
+            printf("Digite o número do primeiro atributo (1 a 7): ");
+            scanf("%d", &atributo1);
+
+            printf("Digite o número do segundo atributo (1 a 7): ");
+            scanf("%d", &atributo2);
+
+            float valor1_1, valor1_2, valor2_1, valor2_2;
+
+            switch (atributo1) {
+                case 1: valor1_1 = populacao1; valor2_1 = populacao2; break;
+                case 2: valor1_1 = area1; valor2_1 = area2; break;
+                case 3: valor1_1 = pib1; valor2_1 = pib2; break;
+                case 4: valor1_1 = pontos1; valor2_1 = pontos2; break;
+                case 5: valor1_1 = densidadepopulacional1; valor2_1 = densidadepopulacional2; break;
+                case 6: valor1_1 = PibPerCapita1; valor2_1 = PibPerCapita2; break;
+                case 7: valor1_1 = SuperPoder1; valor2_1 = SuperPoder2; break;
+                default: printf("Atributo 1 inválido!\n"); return 1;
+            }
+
+            switch (atributo2) {
+                case 1: valor1_2 = populacao1; valor2_2 = populacao2; break;
+                case 2: valor1_2 = area1; valor2_2 = area2; break;
+                case 3: valor1_2 = pib1; valor2_2 = pib2; break;
+                case 4: valor1_2 = pontos1; valor2_2 = pontos2; break;
+                case 5: valor1_2 = densidadepopulacional1; valor2_2 = densidadepopulacional2; break;
+                case 6: valor1_2 = PibPerCapita1; valor2_2 = PibPerCapita2; break;
+                case 7: valor1_2 = SuperPoder1; valor2_2 = SuperPoder2; break;
+                default: printf("Atributo 2 inválido!\n"); return 1;
+            }
+
+            float soma1 = valor1_1 + valor1_2;
+            float soma2 = valor2_1 + valor2_2;
+
+            printf("\nSoma dos atributos para %s: %.2f\n", cidade1, soma1);
+            printf("Soma dos atributos para %s: %.2f\n", cidade2, soma2);
+
+            if (soma1 > soma2)
+                printf("Vencedor: %s\n", cidade1);
+            else if (soma2 > soma1)
+                printf("Vencedor: %s\n", cidade2);
+            else
+                printf("Empate!\n");
+            break;
+
         default:
             printf("Opção inválida!\n");
     }
 
     return 0;
 }
-
